@@ -1,0 +1,11 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+    <h1>Hejsa {{ title }}</h1>
+    {% if memes %}
+        <h2>MEMES</h2>
+    {% endif %}
+    {% for player in data %}
+        <p>{{ player.first_name }}{% if player.middle_name %} {{ player.middle_name }}{% endif %} {{ player.last_name }} - {{ player.birthday|date("d/m/Y") }}</p>
+    {% endfor %}
+{% endblock %}
